@@ -8,13 +8,17 @@ const   express     = require("express"),
 // 
 // Set Variables
 // 
+app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 // 
 // Routes
 // 
 app.route("/")
 .get((req,res) => {
-    res.send("Hello World");
+    res.render("landing");
 });
 
 
