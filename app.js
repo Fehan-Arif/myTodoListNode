@@ -21,6 +21,10 @@ app.route("/")
     res.render("landing");
 });
 
+app.route("/list")
+.get((req,res) => {
+    res.render("list");
+});
 
 // 
 //  Listen
