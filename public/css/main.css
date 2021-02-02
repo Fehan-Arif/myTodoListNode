@@ -4,31 +4,8 @@ html {
 body {
     margin: 0;
     background: #B2FEFA;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-.nav {
-    padding: 100px 0 ;
-}
-
-#toDo {
-    margin: auto;
-    width: 50%;
-    height: auto;
-    text-align: center;
-}
-.todoList {
+    background: -webkit-linear-gradient(to right, #13a2be, #c1ecea);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #13a2be, #c1ecea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 }
 
-.item {
-    background-color: aliceblue;
-    list-style: none;
-    padding: 10px;
-    width: 50%;
-    border-top: grey 1px solid;
-    border-left: grey 1px solid;
-    border-right: grey 1px solid;
-    margin: auto;
-}
