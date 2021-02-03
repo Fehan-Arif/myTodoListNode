@@ -1,6 +1,62 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
 body {
     margin: 0;
     background: #B2FEFA;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #13a2be, #c1ecea);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #13a2be, #c1ecea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
+
+.nav {
+    padding-top: 100px;
+}
+
+.box {
+    margin: auto;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#listHeading {
+    text-align: center;
+    background-color: rgb(0, 65, 65);
+}
+.listTitle {
+    font-size: 2.0rem;
+    color: white;
+    padding: 10px;
+}
+
+.items {
+    padding: 10px 0 0 0;
+}
+
+.item {
+    list-style: none;
+    border-bottom: rgb(173, 173, 173) 0.5px solid;
+    padding: 20px;
+}
+.item input {
+    margin-right: 25px;
+}
+.item:last-child {
+    border-bottom: none;
+}
+
+input[type="text"] {
+    text-align: center;
+    border: none;
+    height: 30px;
+    font-size: 20px;
+    background: transparent;
+    font-weight: 200px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #13a2be;
+}
+
