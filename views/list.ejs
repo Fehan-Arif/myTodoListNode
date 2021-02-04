@@ -1,21 +1,25 @@
 <%- include("./partials/header"); %>
 <main>
-    <!-- List  -->
-    <section id="toDo">
-        <div class="wrapper">
-            <div class="container box" id="listHeading">
-                <h1 class="listTitle">My List</h1>
-            </div>
-            <div class="container box">
-                <ul class="items">
-                    <!-- <li class="item"><input type="checkbox"> Buy groceries</li>
-                    <li class="item"><input type="checkbox"> Buy groceries</li> -->
-                    <li class="item"><input type="checkbox"><input type="text" placeholder="New Item" autocomplete="off"></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <!-- List  -->
+  <section id="toDo">
+    <div class="wrapper">
+      <div class="container box" id="listHeading">
+        <h1 class="listTitle">My List</h1>
+      </div>
+      <div class="container box">
+        <ul class="items">
+          <% listItem.map((list) => { %>
+            <li class="item"><input type="checkbox" /><%=list%></li>
+          <% }) %>
+          <form action="/list" method="post">
+            <li class="item">
+                <input type="text" placeholder="New Item" autocomplete="off" name="newItem"/>
+                <button class="btn-add" type="submit" name="addButton">+</button>  
+              </li>
+        </form>
+        </ul>
+      </div>
+    </div>
+  </section>
 </main>
 <%- include("./partials/footer"); %>
-
-

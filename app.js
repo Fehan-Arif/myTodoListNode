@@ -13,6 +13,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const list = ["buy groceries", "make dinner"];
+
 // 
 // Routes
 // 
@@ -23,7 +25,12 @@ app.route("/")
 
 app.route("/list")
 .get((req,res) => {
-    res.render("list");
+    res.render("list", {listItem: list});
+})
+.post((req,res)=> {
+    let newItem = req.body.newItem;
+    list.push(newItem);
+    res.redirect("/list")
 });
 
 // 
