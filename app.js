@@ -31,8 +31,22 @@ app.route("/list")
     let newItem = req.body.newItem;
     list.push(newItem);
     res.redirect("/list")
+})
+.delete((req,res)=>{
+
 });
 
+
+app.route("/signin")
+.get((req,res)=>{
+    res.render("signin");
+});
+
+
+app.route("/signup")
+.get((req,res)=>{
+    res.render("signup");
+});
 // 
 //  Listen
 // 
