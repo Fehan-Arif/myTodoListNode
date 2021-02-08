@@ -66,16 +66,26 @@ passport.deserializeUser(User.deserializeUser());
 
 
 // 
-// Routes
+// Landing Route
 // 
 app.route("/")
 .get((req,res) => {
     res.render("landing");
 });
 
+// 
+// List Route
+// 
+
 app.route("/list")
 .get((req,res) => {
-    res.render("list", {listItem: list});
+    if(req.isAuthenticated()){
+        res.render("list", {listItem: list});
+    } else {
+        res.redirect("/")
+    }
+
+    
 })
 .post((req,res)=> {
     let newItem = req.body.newItem;
@@ -86,17 +96,52 @@ app.route("/list")
 
 });
 
+// 
+// Login Route 
+// 
 
 app.route("/login")
 .get((req,res)=>{
     res.render("login");
+})
+.post((req,res)=>{
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+    req.login(user, (err) => {
+        if (err) {
+            console.log(err);
+            res.redirect("/login");
+        } else {
+            passport.authenticate("local")(req,res, ()=> {
+                res.redirect("/list");
+            });
+        }
+    });
 });
 
+// 
+// Register Route
+// 
 
 app.route("/register")
 .get((req,res)=>{
     res.render("register");
+})
+.post((req,res)=>{
+    User.register({username: req.body.username}, req.body.password, (err, user) => {
+        if (err) {
+            console.log(err);
+            res.redirect("register");
+        } else {
+            passport.authenticate("local")(req,res, ()=> {
+                res.redirect("/list");
+            });
+        }
+    });
 });
+
 // 
 //  Listen
 // 
