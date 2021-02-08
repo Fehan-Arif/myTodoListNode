@@ -87,15 +87,15 @@ app.route("/list")
 });
 
 
-app.route("/signin")
+app.route("/login")
 .get((req,res)=>{
-    res.render("signin");
+    res.render("login");
 });
 
 
-app.route("/signup")
+app.route("/register")
 .get((req,res)=>{
-    res.render("signup");
+    res.render("register");
 });
 // 
 //  Listen
