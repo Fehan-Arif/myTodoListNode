@@ -44,6 +44,7 @@ app.use(passport.session());
 // Items Schema
 //
 const itemsSchema = new mongoose.Schema({
+  type: mongoose.Schema.Types.ObjectId,
   name: String
 });
 
@@ -114,18 +115,36 @@ app
     });
   });
 
-  app.route("/delete")
-  .post((req,res)=>{
-    // res.send("Delete post");
-    console.log(req.body.checkbox);
-    const checkedItem = req.body.checkbox;
-    User.findByIdAndRemove(checkedItem, function(err){
-      if(!err){
-        console.log("something happen");
-      }
-    });
-  //   User.findOneAndUpdate({name: listName}, {$pull: {items: {_id: checkedItemId}}}, function(err, foundList) {
-  });
+  // 
+// Delete Route 
+// 
+  // app
+  // .route("/delete")
+  // .post((req,res)=>{
+  //   // res.send("Delete post");
+  //   console.log(req.body.checkbox);
+  //   const userName = req.user.username;
+  //   const checkedItem = req.body.checkbox;
+  //   User.findOne({ username: userName }, function (err, foundUser) {
+  //     if (foundUser.username === userName) {
+  //      console.log(foundUser.items);
+  //       res.redirect("/list");
+  //       foundUser.findByIdAndDelete({_id: checkedItem}, function(err){
+  //         if(!err){
+  //           console.log(this);
+  //           res.redirect("/list");
+  //         }
+  //       });
+  //     } else {
+  //       console.log(err);
+  //       res.redirect("/list");
+  //     } 
+  //   });
+  // });
+
+
+  
+  
 
 //
 // Login Route
