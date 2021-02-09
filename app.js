@@ -88,21 +88,21 @@ app
     if (req.isAuthenticated()) {
       const foundItems = req.user.items;
       res.render("list", { listItem: foundItems });
-      console.log(foundItems);
+      // console.log(foundItems);
     } else {
       res.redirect("/");
     }
   })
   .post((req, res) => {
     const newItem = req.body.newItem;
-    console.log(newItem);
+    // console.log(newItem);
     const userName = req.user.username;
     const item = new Item({
       name: newItem
     });
     console.log(item);
     User.findOne({ username: userName }, function (err, foundUser) {
-      console.log(foundUser);
+      // console.log(foundUser);
       if (foundUser.username === userName) {
         foundUser.items.push(item);
         foundUser.save();
@@ -112,6 +112,19 @@ app
         res.redirect("/list");
       } 
     });
+  });
+
+  app.route("/delete")
+  .post((req,res)=>{
+    // res.send("Delete post");
+    console.log(req.body.checkbox);
+    const checkedItem = req.body.checkbox;
+    User.findByIdAndRemove(checkedItem, function(err){
+      if(!err){
+        console.log("something happen");
+      }
+    });
+  //   User.findOneAndUpdate({name: listName}, {$pull: {items: {_id: checkedItemId}}}, function(err, foundList) {
   });
 
 //

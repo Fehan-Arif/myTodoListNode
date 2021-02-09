@@ -9,7 +9,12 @@
       <div class="container box">
         <ul class="items">
           <% listItem.map((foundItems) => { %>
-            <li class="item"><input type="checkbox" /><%=foundItems.name%></li>
+            <form action="/delete" method="POST">
+            <li class="item">
+                <input type="checkbox" name="checkbox" value="<%=foundItems._id%>" onchange="this.form.submit()"/>
+              <%=foundItems.name%>
+            </li>
+          </form>
           <% }) %>
           <form action="/list" method="post">
             <li class="item">
