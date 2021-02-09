@@ -1,3 +1,16 @@
 <%- include("./partials/header"); %>
-<p> Hello world</p>
-<%- include("./partials/footer"); %>
+<main>
+    <section id="userAuthentication">
+        <div class="container">
+            <form action="/login" method="GET">
+                <button value="/login">Login</button>
+            </form>
+            <form action="/register" method="GET">
+                <button value="/register">Signup</button>
+            </form>
+            
+            
+        </div>
+    </section>
+</main>
+<%- include("./partials/footer"); %>    
