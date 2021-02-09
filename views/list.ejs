@@ -8,8 +8,8 @@
       </div>
       <div class="container box">
         <ul class="items">
-          <% listItem.map((list) => { %>
-            <li class="item"><input type="checkbox" /><%=list%></li>
+          <% listItem.map((foundItems) => { %>
+            <li class="item"><input type="checkbox" /><%=foundItems.name%></li>
           <% }) %>
           <form action="/list" method="post">
             <li class="item">
