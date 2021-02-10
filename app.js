@@ -130,10 +130,10 @@ app
     // User.findOneAndUpdate({username: loggedUser}, {items:{_id: checkedItem}},null, function(err,
     User.findByIdAndUpdate(
       { items:{_id: checkedItem}},
-      update={ items:
-        {
-          name: ""
-        }},
+      {
+        _id: "",
+        name: ""
+      },
       function(err, foundUser){
       if(err){
         console.log(err);
