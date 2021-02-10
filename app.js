@@ -115,9 +115,36 @@ app
     });
   });
 
-  // 
+// 
 // Delete Route 
 // 
+app
+.route("/delete")
+.post(function(req,res){
+    console.log(req.body.checkbox);
+    const checkedItem = req.body.checkbox;
+    // console.log(req.body);
+    // console.log(req.user);
+    console.log(req.user.username);
+    const loggedUser = req.user.username;
+    // User.findOneAndUpdate({username: loggedUser}, {items:{_id: checkedItem}},null, function(err,
+    User.findByIdAndUpdate(
+      { items:{_id: checkedItem}},
+      update={ items:
+        {
+          name: ""
+        }},
+      function(err, foundUser){
+      if(err){
+        console.log(err);
+      } else {
+        console.log(foundUser.items);
+        // foundUser.items.pull({_id: checkedItem});
+        console.log(foundUser.items);
+        res.redirect("/list");
+      }
+    });
+});
   // app
   // .route("/delete")
   // .post((req,res)=>{
