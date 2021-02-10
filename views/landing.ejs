@@ -1,14 +1,16 @@
 <%- include("./partials/header"); %>
 <main>
     <section id="userAuthentication">
-        <div class="container">
+        <div class="container box loginForm">
             <form action="/login" method="GET">
-                <button value="/login">Login</button>
+                <button class="btn btnLogin" value="/login">Login</button>
             </form>
             <form action="/register" method="GET">
-                <button value="/register">Signup</button>
+                <button class="btn btnRegister" value="/register">Signup</button>
             </form>
         </div>
     </section>
 </main>
 <%- include("./partials/footer"); %>    
+
+

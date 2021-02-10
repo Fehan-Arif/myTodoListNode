@@ -75,3 +75,93 @@ input[type="checkbox"] {
     margin-right: 20px;
     display: inline-block;
 }
+
+.loginForm {
+    margin: 200px auto;
+}
+.btn {
+    width: 100%;
+    height: 50px;
+}
+
+.btnLogin {
+    border: none;
+    background: #404040;
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    }
+.btnLogin:hover {
+    color: #404040 !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+    }
+    
+.btnRegister {
+    border: none;
+    background: #ffffff;
+    color: #404040 !important;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    }
+.btnRegister:hover {
+    color: #a59494 !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+    }    
+
+
+input[type="password"] {
+    text-align: center;
+    border: none;
+    height: 30px;
+    font-size: 20px;
+    background: transparent;
+    font-weight: 200px;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #13a2be;
+}
+
+.btnLoginSubmit {
+    border: none;
+    background: #404040;
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    }
+.btnLoginSubmit:hover {
+    color: #404040 !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+    }
+
+    .loginInput {
+        width: 100%;
+    }
